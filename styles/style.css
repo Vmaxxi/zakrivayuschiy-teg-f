@@ -19,6 +19,7 @@
   min-block-size: 100dvb;
   padding-top: 100px;
   font-family: var(--Inter-Variable), sans-serif;
+  font-variation-settings: 'wgth' var(--p-weight-text)
 }
 
 body {
@@ -172,6 +173,14 @@ main {
    1px 0 var(--background-color), 
    0 -1px var(--background-color);
 }
+
+@supports((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+  .card__watermark {
+      -webkit-text-stroke: 1px var(--background-color);
+      -webkit-text-stroke: 1px var(--background-color);
+      text-shadow: none;
+  }
+} 
 
 .main__text {
   display: flex;
