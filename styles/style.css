@@ -18,7 +18,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   padding-top: 100px;
-  font-family: var(--Inter-Variable), sans-serif;
+  font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wgth' var(--p-weight-text)
 }
 
@@ -32,11 +32,10 @@ body {
 header {
   margin: 0 auto 100px auto;
   padding: 136px 0 15px;
-  font-family: var(--PressStart2P-Regular);
+  font-family: var(--accent-font), sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:25px;
   width: min(700px, 100%);
   background-color: var(--background-color);
   color: var(--accent-color);
@@ -44,19 +43,15 @@ header {
   border: 2px solid var(--accent-color);
 }
 
-.header__content {
-  display: flex;
-  flex-direction: column;
-  gap:20px;
-  align-items: center;
-
-}
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  margin-bottom: 20px;
+  text-decoration: none;
 }
 
 .header__text {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-bottom: 25px;
 }
 
 .theme-menu__button {
@@ -100,7 +95,7 @@ header {
 .theme-menu__button:after {
   content: '';
   display: block;
-  transition: all 0.5s;
+  transition: all 0.3s;
   width: 0%;
   height: 2px;
   background-color: var(--accent-color);
@@ -142,16 +137,13 @@ main {
   width: 100%;
   display: block;
   border-bottom: 2px solid var(--accent-color);
+  object-fit: cover;
 }
 
 .card__text {
   color: var(--accent-color);
   margin: 26px;
-}
-
-.card__text2 {
-  color: var(--accent-color);
-  margin: 0 15px 25px;
+  line-height: 21px;
 }
 
 .main__card-img {
@@ -159,7 +151,7 @@ main {
 }
 
 .card__watermark {
-  font-family: var(--PressStart2P-Regular, fantasy);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
@@ -177,14 +169,11 @@ main {
 @supports((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
   .card__watermark {
       -webkit-text-stroke: 1px var(--background-color);
-      -webkit-text-stroke: 1px var(--background-color);
       text-shadow: none;
   }
 } 
 
 .main__text {
-  display: flex;
-  flex-direction: column;
   font-size: 18px;
   font-weight: 400;
 }
@@ -219,12 +208,12 @@ main {
   align-items: center;
   border: 2px solid var(--accent-color);
   background-color: transparent;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .button__text {
   color: var(--button-color);
-  font-family: var(--PressStart2P-Regular);
+  font-family: var(--accent-font), fantasy;
   z-index: 2;
   mix-blend-mode: difference;
 }
@@ -239,6 +228,7 @@ main {
   align-items: center;
   justify-content: center;
   transition: border 0.3s ease;
+  margin-right: 4px;
 }
 
 .like-icon {
@@ -258,16 +248,12 @@ main {
   outline: none;
 }
 
-.button__ok:focus,
-.card__like-button:focus,
-.save__button:focus {
+.button:focus {
   outline: none;
   box-shadow: 2px 2px 0px 0px var(--accent-color);
 }
 
-.button__ok:before,
-.card__like-button:before,
-.save__button:before {
+.button:before {
   content:"" ;
   position: absolute;
   top: 0;
@@ -278,41 +264,35 @@ main {
   transition: 0.5s ease-in-out;
 }
 
-.button__ok:hover:before,
-.card__like-button:hover:before, 
-.save__button:hover:before {
+.button:hover:before {
   width: 100%;
 }
 
-.contour {
-  fill: var(--accent-color);
-}
-
-.image2 {
+.saturate {
   filter: saturate(30%);
 }
 
-.image3 {
+.brightness {
   filter: saturate(400%) brightness(100%);
 }
 
-.image4 {
+.grayscale {
   filter: saturate(200%) grayscale(50%) ;
 }
 
-.image5 {
+.invert {
   filter: saturate(220%) invert(60%) contrast(200%) ;
 }
 
-.image6 {
+.sepia {
   filter: saturate(30%) sepia(60%) grayscale(50%) contrast(200%);
 }
 
-.image7 {
+.blur {
   filter:  blur(5px);
 }
 
-.image8 {
+.dark-invert {
   filter: saturate(30%) invert(20%) contrast(200%)  brightness(80%);
 }
 
@@ -326,7 +306,7 @@ main {
   height: 55px;
   align-items: center;
   justify-content: center;
-  font-family: var(--PressStart2P-Regular, fantasy);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   line-height: 90%;
   background-color: var(--background-color);
@@ -345,7 +325,7 @@ main {
 .dialog {
   width: 357px;
   background-color: var(--background-color);
-  font-family: var(--PressStart2P-Regular,fantasy);
+  font-family: var(--accent-font,fantasy);
   text-transform: uppercase;
   font-size: 14px;
   padding: 32px 42px 32px;
@@ -367,7 +347,7 @@ main {
 
 .dialog__text {
   display: block;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 19px;
   line-height: 150%;
   text-transform: uppercase;
   color: var(--accent-color);
@@ -387,7 +367,7 @@ main {
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 @media (width <= 476px) {

@@ -29,13 +29,42 @@
 
   .main-body {
     fill: var(--no-heart-color);
-    transition: fill .3s linear;
+    transition: fill .3s linear 0.5s; 
+  }
+
+  .contour {
+    fill: var(--accent-color);
   }
   
+  .like-icon.is-liked .contour { 
+    fill: var(--heart-color);
+    transition: fill .3s linear 0.06s; 
+  }
+  
+  .main-body:hover {
+    fill: var(--no-heart-color);
+    transition: fill .3s linear 0.5s;
+  }
+
+  .main-body:active {
+    fill: var(--no-heart-color);
+    transition: fill .3s linear 0.5s;
+  }
+
   .core {
     fill: var(--no-heart-color);
-    transition: fill .3s linear .03s;
+    transition: fill .3s linear; 
   }
+
+  .core:hover {
+    fill: var(--no-heart-color);
+    transition: fill .3s linear; 
+}
+
+  .core:active {
+    fill: var(--no-heart-color);
+    transition: fill .3s linear; 
+}
   
   .sparks {
     fill: var(--heart-color);
@@ -51,11 +80,6 @@
     fill: var(--heart-color);
     transition: fill .3s linear; 
   }
-  
-  .like-icon.is-liked .contour { 
-    fill: var(--heart-color);
-    transition: fill .3s linear 0.06s; 
-  }
 
   .is-liked .sparks {
     animation: sparks-heart .3s ease-in .3s alternate;
@@ -64,6 +88,7 @@
   .is-liked .heart {
     animation: heart-scale .3s ease-in .1s alternate;
   }
+
   
 
   @keyframes sparks-heart {
@@ -78,10 +103,10 @@
   @keyframes heart-scale {
     to {
       transform: scale(1);
-      transform-origin: 50% 50%;
+      transform-origin: 50%;
     }
     from {
       transform: scale(1.5);
-      transform-origin: 50% 50%;
+      transform-origin: 50%;
     }
   }
