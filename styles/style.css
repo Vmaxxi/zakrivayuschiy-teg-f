@@ -19,7 +19,8 @@
   min-block-size: 100dvb;
   padding-top: 100px;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wgth' var(--p-weight-text)
+  font-variation-settings: 'wght' var(--p-weight-text);
+  color: var(--accent-color);
 }
 
 body {
@@ -194,8 +195,7 @@ main {
   padding: 0;
 }
 
-.card__like-button, 
-.button__ok {
+.button {
   cursor: pointer;
   position: relative;
   display: flex;
@@ -298,20 +298,10 @@ main {
 
 /*FOOTER*/
 .save__button {
-  position: relative;
-  display: flex;
-  cursor: pointer;
   margin: 0 auto 80px;
   width: 340px;
-  height: 55px;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--accent-font, fantasy);
-  font-size: 14px;
-  line-height: 90%;
+  height: 55px; 
   background-color: var(--background-color);
-  border: 2px solid var(--accent-color);
-  transition: all .5s;
 }
 
 .floppy_image {
@@ -319,7 +309,8 @@ main {
   height: 21px;
   margin-right: 8px;
   mix-blend-mode: difference;
-  z-index: 10;
+  z-index: 10;  
+  stroke: var(--button-color);
 }
 
 .dialog {
@@ -343,6 +334,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  stroke: var(--button-color);
 }
 
 .dialog__text {
@@ -399,5 +391,10 @@ dialog::backdrop {
     width: 40px;
     height: 40px;
     margin-bottom: 8px;
+  }
+
+  .card__watermark {
+    right: 11px;
+    top: 22px;
   }
 }
