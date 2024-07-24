@@ -311,6 +311,7 @@ main {
   mix-blend-mode: difference;
   z-index: 10;  
   stroke: var(--button-color);
+  color: var(--button-color);
 }
 
 .dialog {
@@ -345,10 +346,11 @@ main {
 }
 
 .dialog__image {
+  stroke: var(--accent-color);
+  color: var(--accent-color);
   z-index: 10;
   width: 90px;
   height: 40px;
-  stroke: var(--accent-color);
 }
 
 .button__ok {
