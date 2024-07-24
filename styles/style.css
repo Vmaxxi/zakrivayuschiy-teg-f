@@ -131,7 +131,7 @@ main {
   padding: 6px 10px;
   font-size: 18px;
   border-bottom: 2px solid var(--accent-color);
-
+  font-variation-settings: "wght" var(--title-weight-text);
 }
 
 .card__image {
@@ -334,7 +334,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  stroke: var(--button-color);
 }
 
 .dialog__text {
@@ -346,10 +345,10 @@ main {
 }
 
 .dialog__image {
-  stroke: var(--accent-color);
   z-index: 10;
   width: 90px;
   height: 40px;
+  stroke: var(--accent-color);
 }
 
 .button__ok {
